@@ -5,21 +5,21 @@ import 'dart:math';
 // 1
 checkAllergy({int? score}){
   Map<String , int> allergens = {
-    "eggs" : 1 ,
-    "peanuts" : 2 ,
-    "shellfish" : 4 ,
-    "strawberries" : 8 ,
-    "tomatoes" : 16 ,
-    "chocolate" : 32 ,
+    "cats" : 128,
     "pollen" : 64 ,
-    "cats" : 128
+    "chocolate" : 32 ,
+    "tomatoes" : 16 ,
+    "strawberries" : 8 ,
+    "shellfish" : 4 ,
+    "peanuts" : 2 ,
+    "eggs" : 1 ,
   } ;
 
   Map userAllergens = {};
-
+  
   for (var element in allergens.entries) {
-    if (score! >= element.value) {
-      score -= element.value ;
+    if (score! >= element.value ) {
+      score = score - element.value ;
       userAllergens.addEntries({element});
     }
   }
@@ -29,21 +29,24 @@ checkAllergy({int? score}){
     stdout.write("$key , ");
   });
 
+  print("");
 
 }
 
 // 2
 printNumbers({ List<int>? list }){
+  int totalScore = 0 ;
+  stdout.write("numbers less than 3 : ");
+
   for (var number in list!) {
-    int totalScore = 0 ;
-    stdout.write("numbers less than 3 : ");
     if (number < 3) {
       stdout.write("$number , ");
     } else {
       totalScore += number ;
     }
-    print("total numbers higher than 3 : $totalScore");
   }
+  print("");
+    print("total numbers higher than 3 : $totalScore");
 }
 
 // 3
@@ -71,7 +74,7 @@ findAllDevidors(){
 
   List devidors = [] ;
 
-  for (var i = 0; i < input; i++) {
+  for (var i = 1; i < input; i++) {
     if (input % i == 0 ) {
       devidors.add(i);
     }
@@ -79,7 +82,6 @@ findAllDevidors(){
 
   print(devidors);
 }
-
 
 // 5
 randomNumbers(){
@@ -98,7 +100,6 @@ randomNumbers(){
   }
 
 }
-
 
 // 6
 commonItems({List? list1 , List? list2}){
@@ -131,6 +132,7 @@ backwards(){
   for (var i = backward.length-1 ; i >= 0 ; i--) {
     stdout.write("${backward[i]} ");
   }
+  print("");
 }
 
 // 8
@@ -152,6 +154,7 @@ game(){
       for (var i = 0; i < numbers.length; i++) {
         if(numbers[i] == stringRandomNumber[i]){
           print("you got a bonus ! ");
+          guessedNumbers++;
         } else {
           print("you got a minus ! ");
         }
@@ -176,7 +179,7 @@ RockPaperScissors(){
 
   List game = ["rock" , "paper" , "scissors"];
 
-  while(input.isEmpty || !game.contains(input.toLowerCase().trim())){
+  while(input.isEmpty ){
     print("please enter a valid value : ");
   }
 
@@ -253,7 +256,7 @@ birthdays(){
   }
 }
 
-// 11
+// 12
 numberOfList({List<int>? list}){
   return [list![0] , list[list.length-1]];
 }
