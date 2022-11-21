@@ -2,7 +2,6 @@ import 'dart:math';
 import 'Dart:io';
 
 main() {
-//
   circle circle1 = circle(name: "circle", radius: 10);
 
   rectangle rectangle1 = rectangle(name: "rectangle", width: 3, height: 6);
