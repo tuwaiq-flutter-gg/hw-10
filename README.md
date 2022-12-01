@@ -1,4 +1,4 @@
-# Homwwork 10
+# Homework 10
 
 In this exercise you will develop a class of shapes to write a program that computes the area of each shape for different objects. The hierarchy will consist of a superclass class called `Shape` with three derived classes (Choose three different shapes ex: circle, cylinder ...etc). Do the following.
 
